@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import GlobalContext from "./globalContext";
-import useData from "../hooks/useData";
+import useRequests from "../hooks/useRequests";
 
 const GlobalState: React.FC = ({ children }) => {
-  const requests = useData();
+  const [loading, setLoading] = useState<Boolean>(false);
+
+  const requests = useRequests(setLoading);
   return (
-    <GlobalContext.Provider value={requests}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ requests, loading }}>
+      {children}
+    </GlobalContext.Provider>
   );
 };
 
