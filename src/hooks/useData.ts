@@ -4,7 +4,7 @@ import { useState } from "react";
 const useData = () => {
   const [loading, setLoading] = useState<Boolean>(false);
 
-  const { BASE_URL } = process.env;
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const registerUser = async (): Promise<any> => {
     try {
       setLoading(true);
