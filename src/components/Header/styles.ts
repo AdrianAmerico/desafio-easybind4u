@@ -13,6 +13,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: "20px 0",
       justifyContent: "space-between",
       alignItems: "center",
+      transition: "width 1s",
     },
     menu: {
       display: "none",
@@ -53,7 +54,10 @@ export const useStyles = makeStyles((theme: Theme) =>
         textDecoration: "underline",
         cursor: "pointer",
       },
-      svg: {},
+      svg: {
+        width: "2rem",
+        height: "2rem",
+      },
     },
     [theme.breakpoints.down("xs")]: {
       root: {
@@ -87,7 +91,9 @@ export const useStyles = makeStyles((theme: Theme) =>
       userAccess: {
         display: "none",
       },
-      userAccess_span: {},
+      userAccess_span: {
+        display: "none",
+      },
     },
     svg: {
       width: "1.5rem",
