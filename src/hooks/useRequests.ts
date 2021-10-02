@@ -1,6 +1,9 @@
 import axios, { AxiosResponse } from "axios";
 import { Dispatch, SetStateAction } from "react";
 import {
+  AuthUser,
+  Login,
+  LoginSuccess,
   RegisterUser,
   RegisterUserErrorResponse,
 } from "../config/requestTypes";
@@ -24,31 +27,41 @@ const useRequests = (setLoading: Dispatch<SetStateAction<Boolean>>) => {
     return result;
   };
 
-  const loginUser = async (): Promise<any> => {
-    try {
-      setLoading(true);
-      const result = await axios.post(`${BASE_URL}/o/customer-login/login`);
-      return result;
-    } catch (err) {
-      if (err instanceof Error) {
-        return err.message;
-      }
-    }
+  const loginUser = async (
+    body: Login
+  ): Promise<AxiosResponse<LoginSuccess> | Response> => {
+    setLoading(true);
+    const result = await axios
+      .post(`${BASE_URL}/o/customer-login/login`, body)
+      .then((res: AxiosResponse<LoginSuccess>) => {
+        return res;
+      })
+      .catch((err: Response) => {
+        return err;
+      });
     setLoading(false);
+    return result;
   };
 
-  const findDataByUser = async (): Promise<any> => {
-    try {
-      setLoading(true);
-      const result = await axios.get(`${BASE_URL}/p/customer`);
+  const findDataByUser = async (
+    authorization: string
+  ): Promise<AxiosResponse<AuthUser> | string> => {
+    setLoading(true);
+    const result = await axios
+      .get(`${BASE_URL}/p/customer`, {
+        headers: {
+          auth: authorization,
+        },
+      })
+      .then((res: AxiosResponse<AuthUser>) => {
+        return res;
+      })
+      .catch((err: string) => {
+        return err;
+      });
 
-      return result;
-    } catch (err) {
-      if (err instanceof Error) {
-        return err.message;
-      }
-    }
     setLoading(false);
+    return result;
   };
 
   return { registerUser, loginUser, findDataByUser };

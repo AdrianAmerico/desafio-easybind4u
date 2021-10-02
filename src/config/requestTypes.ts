@@ -40,7 +40,7 @@ export interface Login {
   password: string;
 }
 
-export interface LoginSucess {
+export interface LoginSuccess {
   id: string;
   email: string;
   fullname: string;
