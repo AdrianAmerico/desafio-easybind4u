@@ -23,21 +23,12 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     search: {
       width: "50%",
-      "& > div, & > div > label": {
-        color: theme.palette.primary.contrastText,
-      },
-      "& > div > fieldset": {
-        background: "yellow",
-      },
       "& .MuiOutlinedInput-root": {
         background: "#262A34",
         borderRadius: theme.spacing(1),
       },
       "& .MuiOutlinedInput-input": {
         padding: "16.5px 14px",
-      },
-      "& .MuiSvgIcon-root": {
-        color: "#828BA1",
       },
     },
     userIcon: {

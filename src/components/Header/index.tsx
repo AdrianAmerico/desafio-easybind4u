@@ -4,6 +4,7 @@ import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import { InputAdornment, TextField } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
+import TextInput from "../TextInput";
 
 const Header: React.FC = () => {
   const classes = useStyles();
@@ -19,7 +20,18 @@ const Header: React.FC = () => {
         </div>
 
         <div className={classes.search}>
-          <TextField
+          <TextInput
+            label="O que você está procurando?"
+            placeholder="Digite aqui"
+            inputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon className={classes.svg} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          {/* <TextField
             label="O que você está procurando?"
             placeholder="Digite aqui"
             id="outlined-basic"
@@ -33,8 +45,9 @@ const Header: React.FC = () => {
                 </InputAdornment>
               ),
             }}
-          />
+          /> */}
         </div>
+
         <div className={classes.userIcon}>
           <SearchIcon className={classes.svg} />
           <PermIdentityOutlinedIcon className={classes.svg} />
