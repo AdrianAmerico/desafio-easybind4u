@@ -27,6 +27,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
     },
     span: {
+      color: theme.palette.primary.contrastText,
       "&:hover": {
         textDecoration: "underline",
         cursor: "pointer",
@@ -88,6 +89,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       textInfo: {
         display: "flex",
         padding: theme.spacing(2, 0),
+        color: theme.palette.primary.contrastText,
         textAlign: "center",
         alignItems: "center",
         "& > p": {
@@ -99,6 +101,7 @@ export const useStyles = makeStyles((theme: Theme) =>
           cursor: "pointer",
         },
       },
+      
       divider: {
         display: "flex",
         justifyContent: "space-between",

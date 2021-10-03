@@ -8,8 +8,8 @@ import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
 import VisibilityRoundedIcon from "@material-ui/icons/VisibilityRounded";
 import VisibilityOffRoundedIcon from "@material-ui/icons/VisibilityOffRounded";
 import StyledButton from "../../components/Button";
-import GoogleIcon from "../../components/GoogleIcon";
-import FacebookIcon from "../../components/FacebookIcon";
+import GoogleIcon from "../../assets/GoogleIcon";
+import FacebookIcon from "../../assets/FacebookIcon";
 
 const LoginPage: React.FC = () => {
   const classes = useStyles();
