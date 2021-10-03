@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import { useStyles } from "./styles";
 import PersonOutlineRoundedIcon from "@material-ui/icons/PersonOutlineRounded";
-import { Divider, InputAdornment } from "@material-ui/core";
+import { Button, Divider, InputAdornment } from "@material-ui/core";
 import TextInput from "../../components/TextInput";
 import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
 import VisibilityRoundedIcon from "@material-ui/icons/VisibilityRounded";
 import VisibilityOffRoundedIcon from "@material-ui/icons/VisibilityOffRounded";
 import StyledButton from "../../components/Button";
+import GoogleIcon from "../../components/GoogleIcon";
+import FacebookIcon from "../../components/FacebookIcon";
+
 const LoginPage: React.FC = () => {
   const classes = useStyles();
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +47,6 @@ const LoginPage: React.FC = () => {
                 ),
               }}
             />
-            <Divider />
             <TextInput
               placeholder="Senha"
               inputProps={{
@@ -89,11 +91,30 @@ const LoginPage: React.FC = () => {
         </div>
 
         <div className={classes.buttonContainer}>
-          <button>Entrar com Google</button>
-          <button>Entrar com Facebook</button>
+          <div className={classes.googleButton}>
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              startIcon={<GoogleIcon />}
+            >
+              Entrar com Google
+            </Button>
+          </div>
+          <div className={classes.facebookButton}>
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              startIcon={<FacebookIcon />}
+            >
+              Entrar com Facebook
+            </Button>
+          </div>
         </div>
       </main>
     </>
   );
 };
+
 export default LoginPage;
