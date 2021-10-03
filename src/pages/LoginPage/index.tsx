@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import { useStyles } from "./styles";
 import PersonOutlineRoundedIcon from "@material-ui/icons/PersonOutlineRounded";
-import { InputAdornment, TextField } from "@material-ui/core";
+import { Divider, InputAdornment } from "@material-ui/core";
 import TextInput from "../../components/TextInput";
-
+import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
+import VisibilityRoundedIcon from "@material-ui/icons/VisibilityRounded";
+import VisibilityOffRoundedIcon from "@material-ui/icons/VisibilityOffRounded";
+import StyledButton from "../../components/Button";
 const LoginPage: React.FC = () => {
   const classes = useStyles();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const showPassword = (): void => {
+    setIsVisible(true);
+  };
+
+  const hiddenPassword = (): void => {
+    setIsVisible(false);
+  };
 
   return (
     <>
@@ -22,13 +34,46 @@ const LoginPage: React.FC = () => {
 
         <form className={classes.formContainer}>
           <div className={classes.fieldContainer}>
-            <TextInput label="Usuario" />
+            <TextInput
+              placeholder="Usuário"
+              inputProps={{
+                startAdornment: (
+                  <InputAdornment position="end">
+                    <PersonOutlineRoundedIcon className={classes.svg} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <Divider />
+            <TextInput
+              placeholder="Senha"
+              inputProps={{
+                startAdornment: (
+                  <InputAdornment position="end">
+                    <VpnKeyRoundedIcon className={classes.svg} />
+                  </InputAdornment>
+                ),
 
-            <input />
-            <span>Esqueceu a senha?</span>
+                endAdornment: (
+                  <InputAdornment position="start">
+                    {isVisible ? (
+                      <VisibilityRoundedIcon className={classes.svg} />
+                    ) : (
+                      <VisibilityOffRoundedIcon
+                        className={classes.svg}
+                        style={{ cursor: "pointer" }}
+                      />
+                    )}
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <p>
+              <span className={classes.span}>Esqueceu a senha?</span>
+            </p>
           </div>
 
-          <button>Entrar</button>
+          <StyledButton>Entrar</StyledButton>
         </form>
 
         <div className={classes.textInfo}>

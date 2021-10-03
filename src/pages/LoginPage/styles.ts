@@ -2,14 +2,28 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
+    root: {
+      width: "100%",
+      height: "100%",
+    },
     headerInfo: {},
     textContainer: {},
     formContainer: {},
-    fieldContainer: {},
+    fieldContainer: {
+      "& > p": {
+        textAlign: "end",
+        padding: theme.spacing(1, 0),
+      },
+    },
     textInfo: {},
     divider: {},
     buttonContainer: {},
+    span: {
+      "&:hover": {
+        textDecoration: "underline",
+        cursor: "pointer",
+      },
+    },
     [theme.breakpoints.down("xs")]: {
       root: {
         width: "90%",
@@ -24,16 +38,26 @@ export const useStyles = makeStyles((theme: Theme) =>
       formContainer: {
         display: "flex",
         flexDirection: "column",
+        height: "60%",
+        justifyContent: "space-evenly",
+        padding: theme.spacing(2, 0),
       },
       fieldContainer: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        "& > span": {
+          textAlign: "end",
+          padding: theme.spacing(1, 0),
+        },
       },
       textInfo: {},
       divider: {},
       buttonContainer: {},
+      svg: {
+        width: "1.5rem",
+        height: "1.5rem",
+      },
     },
-    svg: {},
   })
 );
