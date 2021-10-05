@@ -10,5 +10,9 @@ export const GridCell = styled.div`
   li {
     line-height: 1.25rem;
     color: white;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 `;

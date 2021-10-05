@@ -15,6 +15,7 @@ body,
 #root {
   display: flex;
   flex-direction: column;
+  transition: all 0.2s;
 }
 
 button {

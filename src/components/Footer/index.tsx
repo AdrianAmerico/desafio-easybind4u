@@ -1,6 +1,9 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { GridCell } from "../GridCell";
 import { useStyles } from "./styles";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 
 const Footer: React.FC = () => {
   const classes = useStyles();
@@ -51,16 +54,30 @@ const Footer: React.FC = () => {
         <GridCell style={{ gridRow: "1 / span 2" }}>
           <ul>
             <li>Atendimento:</li>
-            <li>Via Whattsapp</li>
-            <li>Vi e-mail</li>
-            <li>segunda a domingo: 8h às 20h (exceto feriados)</li>
+            <Button
+              className={classes.footerInfo_button}
+              fullWidth
+              startIcon={<WhatsAppIcon />}
+            >
+              Via Whattsapp
+            </Button>
+
+            <Button
+              className={classes.footerInfo_button}
+              fullWidth
+              startIcon={<MailOutlineIcon />}
+            >
+              Via e-mail
+            </Button>
+
+            <li className={classes.li}>segunda a domingo: 8h às 20h (exceto feriados)</li>
           </ul>
         </GridCell>
-        <div style={{ gridColumn: "1/5", padding: "10px 0" }}>
+        <div style={{ gridColumn: "1/6", padding: "10px 0" }}>
           <ul>
             <li>Copyright © 2021 site.com.br LTDA</li>
             <li>
-              CNPJ n.º 00.000.000/0000-00 / Av. Lorem ipsum dolor sit amet, nº
+              CNPJ n.º 00.000.000/0000-00 / Av. palavris qui num significa nadis i pareci latim, nº
               000, Austin, Nova Iguaçu/RJ - CEP 00000-000 - empresa do grupo 4U.
             </li>
           </ul>

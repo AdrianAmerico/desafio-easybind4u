@@ -21,8 +21,7 @@ const Header: React.FC = () => {
 
         <div className={classes.search}>
           <TextInput
-            label="O que você está procurando?"
-            placeholder="Digite aqui"
+            placeholder="O que você está procurando?"
             inputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -31,21 +30,6 @@ const Header: React.FC = () => {
               ),
             }}
           />
-          {/* <TextField
-            label="O que você está procurando?"
-            placeholder="Digite aqui"
-            id="outlined-basic"
-            variant="outlined"
-            color="primary"
-            fullWidth
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <SearchIcon className={classes.svg} />
-                </InputAdornment>
-              ),
-            }}
-          /> */}
         </div>
 
         <div className={classes.userIcon}>

@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "100%",
       background: theme.palette.secondary.main,
+      transition: "width 5s",
     },
     footerContainer: {
       width: "90%",
@@ -17,7 +18,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.primary.contrastText,
       padding: theme.spacing(2),
       "& ul": {
-      listStyle: "none",
+        listStyle: "none",
       },
     },
     gridRowOne: {
@@ -39,10 +40,20 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "100%",
     },
+    footerInfo_button: {
+      background: "inherent",
+      border: "1px solid #34363F",
+      color: "white",
+      textTransform: "none",
+      margin: theme.spacing(1, 0),
+    },
     [theme.breakpoints.down("xs")]: {
       root: {
         display: "none",
       },
+    },
+    li: {
+      color: `${theme.palette.primary.contrastText} !important`,
     },
   })
 );
