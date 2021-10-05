@@ -12,6 +12,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       flexDirection: "column",
       width: "100%",
+      padding: theme.spacing(1, 0)
     },
     headerInfo: {},
     textContainer: {

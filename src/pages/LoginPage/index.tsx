@@ -36,7 +36,7 @@ const LoginPage: React.FC = () => {
                   Olá! Seja bem vindo ao site
                 </h1>
                 <h1 className={classes.desktopText}>
-                  Olá| Seja bem-vindo ao EasyBind4U
+                  Olá! Seja bem-vindo ao EasyBind4U
                 </h1>
                 <span>Entre com seu nome de usuário e senha</span>
               </div>
