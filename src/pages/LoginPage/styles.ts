@@ -3,31 +3,29 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: "100%",
-      height: "100%",
+      display: "flex",
+      flex: "2",
     },
     container: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
-      height: "70%",
-      position: "absolute",
       width: "100%",
     },
     headerInfo: {},
     textContainer: {
       textAlign: "center",
-      "& > div > h1":{
+      "& > div > h1": {
         padding: "5px 0",
       },
       "& > div > span": {
-      color: theme.palette.primary.contrastText,
-      marginBottom: theme.spacing(2),
-      }
+        color: theme.palette.primary.contrastText,
+        marginBottom: theme.spacing(2),
+      },
     },
     mobileText: {
-      display: "none"
+      display: "none",
     },
     desktopText: {
       display: "block",
@@ -136,7 +134,7 @@ export const useStyles = makeStyles((theme: Theme) =>
         textAlign: "start",
       },
       mobileText: {
-        display: "block"
+        display: "block",
       },
       desktopText: {
         display: "none",

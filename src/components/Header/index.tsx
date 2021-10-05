@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <header className={classes.root}>
       <div className={classes.container}>
         <div className={classes.logo}>
           <div className={classes.menu}>
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
           <span className={classes.userAccess_span}>Cadastre-se</span>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

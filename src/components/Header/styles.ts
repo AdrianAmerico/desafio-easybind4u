@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     root: {
       backgroundColor: theme.palette.primary.dark,
       color: theme.palette.primary.contrastText,
+      // flex: "1",
     },
     container: {
       width: "80%",

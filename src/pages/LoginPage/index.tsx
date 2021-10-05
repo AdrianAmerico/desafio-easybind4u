@@ -10,6 +10,7 @@ import VisibilityOffRoundedIcon from "@material-ui/icons/VisibilityOffRounded";
 import StyledButton from "../../components/Button";
 import GoogleIcon from "../../assets/GoogleIcon";
 import FacebookIcon from "../../assets/FacebookIcon";
+import Footer from "../../components/Footer";
 
 const LoginPage: React.FC = () => {
   const classes = useStyles();
@@ -122,6 +123,7 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };
