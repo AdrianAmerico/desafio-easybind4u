@@ -27,89 +27,98 @@ const LoginPage: React.FC = () => {
     <>
       <Header />
       <main className={classes.root}>
-        <section className={classes.headerInfo}>
-          <div className={classes.textContainer}>
-            <h1>Olá! Seja bem vindo ao site</h1>
-            <span>Entre com seu nome de usuário e senha</span>
-          </div>
-          <div></div>
-        </section>
+        <div className={classes.container}>
+          <section className={classes.headerInfo}>
+            <div className={classes.textContainer}>
+              <div>
+                <h1 className={classes.mobileText}>
+                  Olá! Seja bem vindo ao site
+                </h1>
+                <h1 className={classes.desktopText}>
+                  Olá| Seja bem-vindo ao EasyBind4U
+                </h1>
+                <span>Entre com seu nome de usuário e senha</span>
+              </div>
+            </div>
+            <div></div>
+          </section>
 
-        <form className={classes.formContainer}>
-          <div className={classes.fieldContainer}>
-            <TextInput
-              placeholder="Usuário"
-              inputProps={{
-                startAdornment: (
-                  <InputAdornment position="end">
-                    <PersonOutlineRoundedIcon className={classes.svg} />
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <TextInput
-              placeholder="Senha"
-              inputProps={{
-                startAdornment: (
-                  <InputAdornment position="end">
-                    <VpnKeyRoundedIcon className={classes.svg} />
-                  </InputAdornment>
-                ),
+          <form className={classes.formContainer}>
+            <div className={classes.fieldContainer}>
+              <TextInput
+                placeholder="Usuário"
+                inputProps={{
+                  startAdornment: (
+                    <InputAdornment position="end">
+                      <PersonOutlineRoundedIcon className={classes.svg} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextInput
+                placeholder="Senha"
+                inputProps={{
+                  startAdornment: (
+                    <InputAdornment position="end">
+                      <VpnKeyRoundedIcon className={classes.svg} />
+                    </InputAdornment>
+                  ),
 
-                endAdornment: (
-                  <InputAdornment position="start">
-                    {isVisible ? (
-                      <VisibilityRoundedIcon className={classes.svg} />
-                    ) : (
-                      <VisibilityOffRoundedIcon
-                        className={classes.svg}
-                        style={{ cursor: "pointer" }}
-                      />
-                    )}
-                  </InputAdornment>
-                ),
-              }}
-            />
+                  endAdornment: (
+                    <InputAdornment position="start">
+                      {isVisible ? (
+                        <VisibilityOffRoundedIcon
+                          className={classes.svg}
+                          style={{ cursor: "pointer" }}
+                        />
+                      ) : (
+                        <VisibilityRoundedIcon className={classes.svg} />
+                      )}
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <p>
+                <span className={classes.span}>Esqueceu a senha?</span>
+              </p>
+            </div>
+
+            <StyledButton>Entrar</StyledButton>
+          </form>
+
+          <div className={classes.textInfo}>
             <p>
-              <span className={classes.span}>Esqueceu a senha?</span>
+              Nao tem uma conta ? <span>Cadastre-se</span>
             </p>
           </div>
 
-          <StyledButton>Entrar</StyledButton>
-        </form>
-
-        <div className={classes.textInfo}>
-          <p>
-            Nao tem uma conta ? <span>Cadastre-se</span>
-          </p>
-        </div>
-
-        <div className={classes.divider}>
-          <div />
-          <span>Ou</span>
-          <div />
-        </div>
-
-        <div className={classes.buttonContainer}>
-          <div className={classes.googleButton}>
-            <Button
-              color="primary"
-              variant="contained"
-              fullWidth
-              startIcon={<GoogleIcon />}
-            >
-              Entrar com Google
-            </Button>
+          <div className={classes.divider}>
+            <div />
+            <span>Ou</span>
+            <div />
           </div>
-          <div className={classes.facebookButton}>
-            <Button
-              color="primary"
-              variant="contained"
-              fullWidth
-              startIcon={<FacebookIcon />}
-            >
-              Entrar com Facebook
-            </Button>
+
+          <div className={classes.buttonContainer}>
+            <div className={classes.googleButton}>
+              <Button
+                color="primary"
+                variant="contained"
+                fullWidth
+                startIcon={<GoogleIcon />}
+              >
+                Entrar com Google
+              </Button>
+            </div>
+            <div className={classes.facebookButton}>
+              <Button
+                color="primary"
+                variant="contained"
+                fullWidth
+                startIcon={<FacebookIcon />}
+              >
+                Entrar com Facebook
+              </Button>
+            </div>
           </div>
         </div>
       </main>

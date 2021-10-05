@@ -6,17 +6,79 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "100%",
     },
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
+      height: "70%",
+      position: "absolute",
+      width: "100%",
+    },
     headerInfo: {},
-    textContainer: {},
+    textContainer: {
+      textAlign: "center",
+      "& > div > h1":{
+        padding: "5px 0",
+      },
+      "& > div > span": {
+      color: theme.palette.primary.contrastText,
+      marginBottom: theme.spacing(2),
+      }
+    },
+    mobileText: {
+      display: "none"
+    },
+    desktopText: {
+      display: "block",
+    },
     formContainer: {},
     fieldContainer: {
       "& > p": {
         textAlign: "end",
         padding: theme.spacing(1, 0),
       },
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      "& > div": {
+        margin: theme.spacing(1, 0),
+      },
+      "& > span": {
+        textAlign: "end",
+        padding: theme.spacing(1, 0),
+      },
     },
-    textInfo: {},
-    divider: {},
+    textInfo: {
+      display: "flex",
+      padding: theme.spacing(2, 0),
+      color: theme.palette.primary.contrastText,
+      textAlign: "center",
+      alignItems: "center",
+      "& > p": {
+        width: "100%",
+      },
+      "& > p > span": {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        cursor: "pointer",
+      },
+    },
+    divider: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      margin: theme.spacing(2, 0),
+      "& > div": {
+        width: "100%",
+        height: "1px",
+        borderBottom: "1px dotted #E1E8F3",
+      },
+      "& > span": {
+        padding: theme.spacing(0, 1),
+        color: theme.palette.primary.contrastText,
+      },
+    },
     buttonContainer: {
       "& > .MuiButton-root": {
         borderRadius: "8px",
@@ -59,14 +121,26 @@ export const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.down("xs")]: {
       root: {
         width: "90%",
-        display: "flex",
-        flexDirection: "column",
+        height: "100%",
         margin: "10% auto",
+      },
+      container: {
+        position: "relative",
+        display: "block",
+        height: "auto",
       },
       headerInfo: {
         width: "50%",
       },
-      textContainer: {},
+      textContainer: {
+        textAlign: "start",
+      },
+      mobileText: {
+        display: "block"
+      },
+      desktopText: {
+        display: "none",
+      },
       formContainer: {
         display: "flex",
         flexDirection: "column",
@@ -86,37 +160,6 @@ export const useStyles = makeStyles((theme: Theme) =>
           padding: theme.spacing(1, 0),
         },
       },
-      textInfo: {
-        display: "flex",
-        padding: theme.spacing(2, 0),
-        color: theme.palette.primary.contrastText,
-        textAlign: "center",
-        alignItems: "center",
-        "& > p": {
-          width: "100%",
-        },
-        "& > p > span": {
-          fontWeight: "bold",
-          textDecoration: "underline",
-          cursor: "pointer",
-        },
-      },
-      
-      divider: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        margin: theme.spacing(2, 0),
-        "& > div": {
-          width: "100%",
-          height: "1px",
-          borderBottom: "1px dotted #E1E8F3",
-        },
-        "& > span": {
-          padding: theme.spacing(0, 1),
-          color: theme.palette.primary.contrastText,
-        },
-      },
       buttonContainer: {
         display: "flex",
         flexDirection: "column",
@@ -129,6 +172,14 @@ export const useStyles = makeStyles((theme: Theme) =>
         width: "1.5rem",
         height: "1.5rem",
       },
+      googleButton: {
+        width: "auto",
+        padding: "0 5px",
+        "& > button": {
+          padding: "6px 22px",
+        },
+      },
+      facebookButton: { width: "auto" },
     },
   })
 );
