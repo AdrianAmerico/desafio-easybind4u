@@ -1,10 +1,17 @@
+import { InputAdornment } from "@material-ui/core";
 import React from "react";
+import TextInput from "../../components/TextInput";
 
 const RegisterPage: React.FC = () => {
   return (
-    <div>
-      <h1>aa</h1>
-    </div>
+    <>
+      <main>
+        <TextInput placeholder="Nome completo" />
+        <TextInput placeholder="E-mail" />
+        <TextInput placeholder="Data de nascimento" />
+        <TextInput placeholder="CPF" />
+      </main>
+    </>
   );
 };
 
