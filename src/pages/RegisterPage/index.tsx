@@ -1,15 +1,16 @@
-import { InputAdornment } from "@material-ui/core";
 import React from "react";
-import TextInput from "../../components/TextInput";
+import Header from "../../components/Header";
+import UserInfo from "./tabs/UserInfo/UserInfo";
+import { useStyles } from "./styles";
+import { Container } from "../../components/Container";
 
 const RegisterPage: React.FC = () => {
+  const classes = useStyles();
   return (
     <>
-      <main>
-        <TextInput placeholder="Nome completo" />
-        <TextInput placeholder="E-mail" />
-        <TextInput placeholder="Data de nascimento" />
-        <TextInput placeholder="CPF" />
+      <Header />
+      <main className={classes.root}>
+        <UserInfo />
       </main>
     </>
   );

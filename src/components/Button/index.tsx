@@ -6,7 +6,7 @@ const StyledButton: React.FC = ({ children }): JSX.Element => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Button color="primary" variant="contained" fullWidth>
+      <Button color="primary" fullWidth>
         {children}
       </Button>
     </div>
