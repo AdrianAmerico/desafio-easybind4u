@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     navPage: {
       display: "flex",
       alignItems: "center",
-      margin: theme.spacing(2, 0),
+      margin: theme.spacing(4, 0),
     },
     container: {
       display: "flex",

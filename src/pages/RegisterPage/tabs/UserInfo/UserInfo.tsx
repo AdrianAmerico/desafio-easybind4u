@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import CircleOneFull from "../../../../assets/CircleOne/CircleOneFull";
 import CircleTwoEmpty from "../../../../assets/CircleTwo/CircleTwoEmpty";
@@ -14,8 +13,8 @@ const UserInfo: React.FC = (): JSX.Element => {
       <div className={classes.container}>
         <nav className={classes.navPage}>
           <CircleOneFull />
-          <Line/>
-          <CircleTwoEmpty/>
+          <Line />
+          <CircleTwoEmpty />
         </nav>
         <h2>Preencha os campos para prosseguir com o cadastro</h2>
         <form className={classes.formContainer}>
