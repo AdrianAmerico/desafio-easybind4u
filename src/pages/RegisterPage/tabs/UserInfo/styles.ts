@@ -80,13 +80,16 @@ export const useStyles = makeStyles((theme: Theme) =>
         position: "absolute",
         inset: "0",
       },
+      navPage: {
+        display: "none",
+      },
       container: {
         width: "100%",
         height: "70%",
-        margin: "5% auto",
+        margin: "auto 0",
         alignItems: "center",
         minWidth: "auto",
-        maxWidth: "auto",
+        maxWidth: "none",
       },
       chevronContainer: {
         display: "none",

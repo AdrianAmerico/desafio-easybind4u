@@ -84,7 +84,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       root: {
         margin: "10% auto",
         width: "90%",
-        maxWidth: "90%",
+        maxWidth: "none",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -92,10 +92,13 @@ export const useStyles = makeStyles((theme: Theme) =>
         position: "absolute",
         inset: "0",
       },
+      navPage: {
+        display: "none",
+      },
       container: {
         width: "100%",
         height: "70%",
-        margin: "5% auto",
+        margin: "auto 0",
         alignItems: "center",
         minWidth: "auto",
         maxWidth: "auto",

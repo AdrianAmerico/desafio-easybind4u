@@ -8,5 +8,10 @@ export const useStyles = makeStyles((theme: Theme) =>
       flex: "8",
       padding: theme.spacing(2, 0),
     },
+    [theme.breakpoints.down("xs")]: {
+      root: {
+        flex: "20",
+      },
+    },
   })
 );
