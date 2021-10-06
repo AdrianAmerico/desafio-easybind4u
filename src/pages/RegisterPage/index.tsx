@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Header from "../../components/Header";
 import UserInfo from "./tabs/UserInfo";
-import { useStyles } from "./styles";
-import Footer from "../../components/Footer";
 import UserData from "./tabs/UserData";
 import SimpleModal from "../../components/Modal";
+import { Main } from "../../components/Main";
 
 const RegisterPage: React.FC = () => {
   const [isSecondStep, setIsSecondStep] = useState<boolean>(false);
@@ -16,12 +14,9 @@ const RegisterPage: React.FC = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  const classes = useStyles();
   return (
     <>
-      <main className={classes.root}>
-        {isSecondStep ? <UserData /> : <UserInfo />}
-      </main>
+      <Main>{isSecondStep ? <UserData /> : <UserInfo />}</Main>
       <SimpleModal open={isOpen} handleClose={handleClose} />
     </>
   );

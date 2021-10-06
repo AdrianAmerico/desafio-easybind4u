@@ -6,6 +6,7 @@ import { theme } from "../global/theme";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import CustomRoute from "../config/CustomRoute/";
+import ProfilePage from "../pages/ProfilePage";
 
 const Router: React.FC = () => (
   <MuiThemeProvider theme={theme}>
@@ -14,7 +15,7 @@ const Router: React.FC = () => (
         <Route exact path="/"></Route>
         <CustomRoute exact path="/login" component={LoginPage} />
         <CustomRoute exact path="/register" component={RegisterPage} />
-        <Route exact path="/profile"></Route>
+        <CustomRoute exact path="/profile" component={ProfilePage} />
         <Route></Route>
       </Switch>
     </BrowserRouter>
