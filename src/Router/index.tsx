@@ -5,20 +5,15 @@ import Header from "../components/Header";
 import { theme } from "../global/theme";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import CustomRoute from "../config/CustomRoute/";
 
 const Router: React.FC = () => (
   <MuiThemeProvider theme={theme}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          
-        </Route>
-        <Route exact path="/login">
-          <LoginPage />
-        </Route>
-        <Route exact path="/register">
-          <RegisterPage />
-        </Route>
+        <Route exact path="/"></Route>
+        <CustomRoute exact path="/login" component={LoginPage} />
+        <CustomRoute exact path="/register" component={RegisterPage} />
         <Route exact path="/profile"></Route>
         <Route></Route>
       </Switch>

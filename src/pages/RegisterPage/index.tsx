@@ -19,11 +19,9 @@ const RegisterPage: React.FC = () => {
   const classes = useStyles();
   return (
     <>
-      <Header />
       <main className={classes.root}>
         {isSecondStep ? <UserData /> : <UserInfo />}
       </main>
-      <Footer />
       <SimpleModal open={isOpen} handleClose={handleClose} />
     </>
   );
