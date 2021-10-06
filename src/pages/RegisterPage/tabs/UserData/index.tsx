@@ -15,13 +15,14 @@ import {
   Checkbox,
 } from "@material-ui/core";
 import EyeIcon from "../../../../assets/EyeIcon";
+import { Container } from "../../../../components/Container";
 
 const UserData: React.FC = (): JSX.Element => {
   const classes = useStyles();
   const [isCheckedTrust, setIsCheckedTrust] = useState<boolean>(true);
 
   return (
-    <div className={classes.root}>
+    <Container>
       <nav className={classes.chevronContainer}>
         <ul>
           <li className={classes.li}>Pagina Inicial</li>
@@ -86,7 +87,7 @@ const UserData: React.FC = (): JSX.Element => {
           Já tem cadastro? Faça <span>login aqui</span>
         </p>
       </div>
-    </div>
+    </Container>
   );
 };
 

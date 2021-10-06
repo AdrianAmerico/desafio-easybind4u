@@ -2,13 +2,6 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      width: "100%",
-      height: "100%",
-      flexDirection: "column",
-      justifyContent: "space-evenly",
-      display: "flex",
-    },
     navPage: {
       display: "flex",
       alignItems: "center",
@@ -69,17 +62,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
 
     [theme.breakpoints.down("xs")]: {
-      root: {
-        margin: "10% auto",
-        width: "90%",
-        maxWidth: "90%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "start",
-        position: "absolute",
-        inset: "0",
-      },
       navPage: {
         display: "none",
       },

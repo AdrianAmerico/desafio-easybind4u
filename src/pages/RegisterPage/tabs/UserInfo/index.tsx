@@ -6,11 +6,12 @@ import StyledButton from "../../../../components/Button";
 import TextInput from "../../../../components/TextInput";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useStyles } from "./styles";
+import { Container } from "../../../../components/Container";
 
 const UserInfo: React.FC = (): JSX.Element => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <Container>
       <nav className={classes.chevronContainer}>
         <ul>
           <li className={classes.li}>Pagina Inicial</li>
@@ -46,7 +47,7 @@ const UserInfo: React.FC = (): JSX.Element => {
           Já tem cadastro? Faça <span>login aqui</span>
         </p>
       </div>
-    </div>
+    </Container>
   );
 };
 
