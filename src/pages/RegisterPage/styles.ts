@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     root: {
       width: "100%",
       height: "100%",
-      flex: "1",
+      flex: "8",
       padding: theme.spacing(2, 0),
     },
   })
