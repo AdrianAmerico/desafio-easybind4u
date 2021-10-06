@@ -17,6 +17,11 @@ export const useStyles = makeStyles((theme: Theme) =>
     container: {
       display: "flex",
       flexDirection: "column",
+      alignItems: "center",
+      width: "50%",
+      maxWidth: "500px",
+      minWidth: "400px",
+      margin: "0 auto",
       height: "60%",
       "& > p": {
         textAlign: "center",
@@ -25,11 +30,32 @@ export const useStyles = makeStyles((theme: Theme) =>
         cursor: "pointer",
         textDecoration: "underline",
       },
+      "& h2": {
+        textAlign: "center",
+        width: "70%",
+        paddingBottom: theme.spacing(2),
+      },
+    },
+    chevronContainer: {
+      width: "80%",
+      margin: "0 auto",
+      padding: theme.spacing(1, 0),
+      "& > ul": {
+        display: "flex",
+        alignItems: "center",
+        listStyle: "none",
+      },
+    },
+    li: {
+      "&:hover": {
+        cursor: "pointer",
+        textDecoration: "underline",
+      },
     },
     formContainer: {
       display: "flex",
       flexDirection: "column",
-      flex: 5,
+      width: "70%",
       height: "70%",
       justifyContent: "space-around",
     },
@@ -46,6 +72,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       root: {
         margin: "10% auto",
         width: "90%",
+        maxWidth: "90%",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -54,8 +81,15 @@ export const useStyles = makeStyles((theme: Theme) =>
         inset: "0",
       },
       container: {
+        width: "100%",
         height: "70%",
         margin: "5% auto",
+        alignItems: "center",
+        minWidth: "auto",
+        maxWidth: "auto",
+      },
+      chevronContainer: {
+        display: "none",
       },
       formContainer: {},
       inputAlign: {},

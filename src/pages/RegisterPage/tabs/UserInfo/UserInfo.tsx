@@ -4,12 +4,23 @@ import CircleTwoEmpty from "../../../../assets/CircleTwo/CircleTwoEmpty";
 import Line from "../../../../assets/Line";
 import StyledButton from "../../../../components/Button";
 import TextInput from "../../../../components/TextInput";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useStyles } from "./styles";
 
 const UserInfo: React.FC = (): JSX.Element => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <nav className={classes.chevronContainer}>
+        <ul>
+          <li className={classes.li}>Pagina Inicial</li>
+          <ChevronRightIcon />
+          <li className={classes.li}>Cadastre-se</li>
+
+          <ChevronRightIcon />
+          <li className={classes.li}>Dados Pessoais</li>
+        </ul>
+      </nav>
       <div className={classes.container}>
         <nav className={classes.navPage}>
           <CircleOneFull />

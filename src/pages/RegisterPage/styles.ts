@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "100%",
       flex: "1",
+      padding: theme.spacing(2, 0),
     },
   })
 );
