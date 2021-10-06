@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     root: {
       "& > .MuiButton-root": {
         borderRadius: "8px",
+        backgroundColor: theme.palette.primary.main,
       },
       "& > button > span": {
         padding: theme.spacing(1, 0),
