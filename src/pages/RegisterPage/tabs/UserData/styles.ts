@@ -29,22 +29,6 @@ export const useStyles = makeStyles((theme: Theme) =>
         paddingBottom: theme.spacing(2),
       },
     },
-    chevronContainer: {
-      width: "80%",
-      margin: "0 auto",
-      padding: theme.spacing(1, 0),
-      "& > ul": {
-        display: "flex",
-        alignItems: "center",
-        listStyle: "none",
-      },
-    },
-    li: {
-      "&:hover": {
-        cursor: "pointer",
-        textDecoration: "underline",
-      },
-    },
     formContainer: {
       display: "flex",
       flexDirection: "column",
@@ -84,9 +68,6 @@ export const useStyles = makeStyles((theme: Theme) =>
         alignItems: "center",
         minWidth: "auto",
         maxWidth: "auto",
-      },
-      chevronContainer: {
-        display: "none",
       },
       formContainer: {},
       inputAlign: {},

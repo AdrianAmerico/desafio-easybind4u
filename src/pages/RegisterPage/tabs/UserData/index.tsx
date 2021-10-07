@@ -16,6 +16,7 @@ import {
 } from "@material-ui/core";
 import EyeIcon from "../../../../assets/EyeIcon";
 import { Container } from "../../../../components/Container";
+import { ChevronContainer } from "../../../../components/ChevronContainer";
 
 const UserData: React.FC = (): JSX.Element => {
   const classes = useStyles();
@@ -23,16 +24,16 @@ const UserData: React.FC = (): JSX.Element => {
 
   return (
     <Container>
-      <nav className={classes.chevronContainer}>
+      <ChevronContainer>
         <ul>
-          <li className={classes.li}>Pagina Inicial</li>
+          <li>Pagina Inicial</li>
           <ChevronRightIcon />
-          <li className={classes.li}>Cadastre-se</li>
+          <li>Cadastre-se</li>
 
           <ChevronRightIcon />
-          <li className={classes.li}>Dados Pessoais</li>
+          <li>Dados Pessoais</li>
         </ul>
-      </nav>
+      </ChevronContainer>
       <div className={classes.container}>
         <nav className={classes.navPage}>
           <CircleOneEmpty />
