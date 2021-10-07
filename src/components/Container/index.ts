@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
-  padding: 8px 0;
-
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  display: flex;
   @media (max-width: 600px) {
-    position: absolute;
+    margin: 10% auto;
+    width: 90%;
+    maxwidth: none;
     height: 100%;
+    display: flex;
+    flexdirection: column;
+    justifycontent: start;
+    position: absolute;
+    inset: 0;
   }
 `;

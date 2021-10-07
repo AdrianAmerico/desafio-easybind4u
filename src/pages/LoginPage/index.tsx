@@ -26,7 +26,6 @@ const LoginPage: React.FC = () => {
 
   return (
     <>
-      <Header />
       <main className={classes.root}>
         <div className={classes.container}>
           <section className={classes.headerInfo}>
@@ -123,7 +122,6 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
