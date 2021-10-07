@@ -4,6 +4,7 @@ import { Main } from "../../components/Main";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useStyles } from "./style";
 import Menu from "../../components/Menu";
+import MyProfile from "./MyProfile";
 
 const ProfilePage: React.FC = () => {
   const classes = useStyles();
@@ -16,9 +17,12 @@ const ProfilePage: React.FC = () => {
           <li>Meus arremates</li>
         </ul>
       </ChevronContainer>
-
-      <Menu />
+      <div style={{ width: "80%", margin: "0 auto", display: "flex" }}>
+        <Menu />
+        <MyProfile />
+      </div>
     </Main>
   );
 };
+
 export default ProfilePage;
