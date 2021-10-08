@@ -88,6 +88,7 @@ const LoginPage: React.FC = () => {
                 onChange={onChange}
                 name="password"
                 value={body.password}
+                type="password"
                 required="required"
                 inputProps={{
                   startAdornment: (

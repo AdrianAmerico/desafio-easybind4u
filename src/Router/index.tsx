@@ -11,11 +11,11 @@ const Router: React.FC = () => (
   <MuiThemeProvider theme={theme}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/"></Route>
+        <Route exact path="/" component={LoginPage} />
         <CustomRoute exact path="/login" component={LoginPage} />
         <CustomRoute exact path="/register" component={RegisterPage} />
         <CustomRoute exact path="/profile" component={ProfilePage} />
-        <Route></Route>
+        <Route component={LoginPage} />
       </Switch>
     </BrowserRouter>
   </MuiThemeProvider>
