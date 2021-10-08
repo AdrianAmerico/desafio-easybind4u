@@ -7,8 +7,22 @@ import TextInput from "../../../../components/TextInput";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useStyles } from "./styles";
 import { Container } from "../../../../components/Container";
+import { InputAdornment } from "@material-ui/core";
 
-const UserInfo: React.FC = (): JSX.Element => {
+import "date-fns";
+import DateFnsUtils from "@date-io/date-fns";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
+
+const UserInfo = ({
+  body,
+  onChange,
+  changeSecondStep,
+  selectedDate,
+  handleDateChange,
+}: any): JSX.Element => {
   const classes = useStyles();
   return (
     <Container>
@@ -29,20 +43,64 @@ const UserInfo: React.FC = (): JSX.Element => {
           <CircleTwoEmpty />
         </nav>
         <h2>Preencha os campos para prosseguir com o cadastro</h2>
-        <form className={classes.formContainer}>
+        <form
+          className={classes.formContainer}
+          onSubmit={(event) => event.preventDefault()}
+        >
           <div className={classes.inputAlign}>
             <div>
-              <TextInput placeholder="Nome completo" />
-              <TextInput placeholder="E-mail" />
+              <TextInput
+                placeholder="Nome completo"
+                name="fullName"
+                onChange={onChange}
+                value={body.fullName}
+              />
+              <TextInput
+                placeholder="E-mail"
+                type={"email"}
+                name="email"
+                onChange={onChange}
+                value={body.email}
+              />
             </div>
             <div>
-              <TextInput placeholder="Data de nascimento" />
-              <TextInput placeholder="CPF" />
+              <TextInput
+                placeholder="Data de nascimento"
+                name="birthday"
+                value={body.birthday}
+                onChange={onChange}
+                // inputProps={{
+                //   endAdornment: (
+                //     <InputAdornment position="start">
+                //       <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                //         <KeyboardDatePicker
+                //           disableToolbar
+                //           variant="inline"
+                //           format="MM/dd/yyyy"
+                //           margin="normal"
+                //           id="date-picker-inline"
+                //           value={selectedDate}
+                //           onChange={handleDateChange}
+                //           KeyboardButtonProps={{
+                //             "aria-label": "change date",
+                //           }}
+                //         />
+                //       </MuiPickersUtilsProvider>
+                //     </InputAdornment>
+                //   ),
+                // }}
+              />
+              <TextInput
+                placeholder="CPF"
+                name="cpf"
+                onChange={onChange}
+                value={body.cpf}
+                max={"11"}
+              />
             </div>
           </div>
-          <StyledButton>Próxima</StyledButton>
+          <StyledButton onClick={changeSecondStep}>Próxima</StyledButton>
         </form>
-
         <p>
           Já tem cadastro? Faça <span>login aqui</span>
         </p>

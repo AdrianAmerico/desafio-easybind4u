@@ -8,6 +8,8 @@ interface InputProps {
   name?: string;
   value?: any;
   required?: string;
+  max?: string;
+  type?: string;
 }
 
 const TextInput = ({
@@ -18,6 +20,8 @@ const TextInput = ({
   name,
   value,
   required,
+  max,
+  type,
 }: InputProps): JSX.Element => {
   const classes = useStyles();
   return (
@@ -31,8 +35,10 @@ const TextInput = ({
         color="primary"
         name={name}
         onChange={onChange}
+        max={max}
         InputProps={inputProps}
         {...(required ? required : null)}
+        type={type}
         fullWidth
       />
     </div>

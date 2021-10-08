@@ -7,15 +7,15 @@ const useForm = (initialState: any) => {
     const { name } = event.target;
     let { value } = event.target;
 
-    if (name === "cpf") {
-      value = value.replace(/\D/g, "");
+    // if (name === "cpf") {
+    //   value = value.replace(/\D/g, "");
 
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    //   value = value.replace(/(\d{3})(\d)/, "$1.$2");
 
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
+    //   value = value.replace(/(\d{3})(\d)/, "$1.$2");
 
-      value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-    }
+    //   value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    // }
     if (name === "cnpj") {
       value = value.replace(/^(\d{2})(\d)/, "$1.$2");
 

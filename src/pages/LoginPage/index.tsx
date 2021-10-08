@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import Header from "../../components/Header";
+import React, { useEffect, useState } from "react";
 import { useStyles } from "./styles";
 import PersonOutlineRoundedIcon from "@material-ui/icons/PersonOutlineRounded";
-import { Button, Divider, InputAdornment } from "@material-ui/core";
+import { Button, InputAdornment } from "@material-ui/core";
 import TextInput from "../../components/TextInput";
 import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
 import VisibilityRoundedIcon from "@material-ui/icons/VisibilityRounded";
@@ -10,10 +9,9 @@ import VisibilityOffRoundedIcon from "@material-ui/icons/VisibilityOffRounded";
 import StyledButton from "../../components/Button";
 import GoogleIcon from "../../assets/GoogleIcon";
 import FacebookIcon from "../../assets/FacebookIcon";
-import Footer from "../../components/Footer";
 import useForm from "../../hooks/useForm";
-import GlobalContext from "../../global/globalContext";
 import useRequests from "../../hooks/useRequests";
+import { useHistory } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const classes = useStyles();
@@ -21,6 +19,7 @@ const LoginPage: React.FC = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const { body, onChange, clear } = useForm({ id: "", password: "" });
   const requests = useRequests(setLoading);
+  const history = useHistory();
 
   const showPassword = (): void => {
     setIsVisible(true);
@@ -30,14 +29,17 @@ const LoginPage: React.FC = () => {
     setIsVisible(false);
   };
 
-  const submitForm = () => {
+  const submitForm = async () => {
     if (body.id.length > 3 && body.password.length > 3) {
       const { id, password } = body;
-      requests.loginUser({ id, password });
-      console.log("enviou");
+      const result = await requests.loginUser({ id, password });
+
+      if (result && result.token) {
+        localStorage.setItem("token", result.token);
+        history.push("/profile");
+      }
       clear();
     }
-    console.log("nao enviou");
   };
   useEffect(() => {}, [body]);
 
@@ -86,6 +88,7 @@ const LoginPage: React.FC = () => {
                 onChange={onChange}
                 name="password"
                 value={body.password}
+                type="password"
                 required="required"
                 inputProps={{
                   startAdornment: (
