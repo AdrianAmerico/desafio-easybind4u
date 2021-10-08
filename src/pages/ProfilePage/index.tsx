@@ -27,7 +27,6 @@ const ProfilePage: React.FC = () => {
   const getUserData = async (token: string) => {
     const response = await requests.findDataByUser(token);
     setUserData([response]);
-    console.log(userData);
   };
 
   const mockData = {

@@ -1,26 +1,12 @@
 import React from "react";
-import clsx from "clsx";
-import {
-  makeStyles,
-  useTheme,
-  Theme,
-  createStyles,
-} from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import { useStyles } from "./styles";
 import Home from "./assets/Home";
 import Document from "./assets/Document";
@@ -63,22 +49,6 @@ export default function Menu() {
           </Typography>
         </div>
         <List>
-          {/* {[
-            "Pagina inicial",
-            "Como funciona",
-            "Meu cadastro",
-            "Meus arremates",
-            "Pagamentos",
-            "Retirada",
-            "Sair",
-          ].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
           <ListItem button>
             <ListItemIcon>
               <Home />

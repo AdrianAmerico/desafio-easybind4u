@@ -39,43 +39,34 @@ const RegisterPage: React.FC = () => {
     if (fullName.length > 5 && email.length > 5 && birthday && cpf.length > 5) {
       setIsSecondStep(true);
     }
-    return console.log("nop");
   };
+  const { fullName, email, nickname, birthday, cpf, pass, checkPass } = body;
 
   const sendRequest = async (): Promise<void> => {
-    const { fullName, email, nickname, birthday, cpf, pass, checkPass } = body;
-
-    if (10 % 2 === 0) {
-      console.log("mandou");
-      const body: RegisterUser = {
-        fullName,
-        email,
-        nickname,
-        birthday,
-        cpfCnpj: cpf,
-        account: {
-          id: email,
-          pass,
-          checkPass,
-        },
-      };
-      const result = await requests.registerUser(body);
-      if (result) {
-        clear();
-        setIsOpen(true);
-        history.push("/profile");
-      }
+    const body: RegisterUser = {
+      fullName,
+      email,
+      nickname,
+      birthday,
+      cpfCnpj: cpf,
+      account: {
+        id: email,
+        pass,
+        checkPass,
+      },
+    };
+    const result = await requests.registerUser(body);
+    if (result) {
+      clear();
+      setIsOpen(true);
+      history.push("/profile");
     }
-    console.log("nop");
   };
 
   const handleClose = () => {
     setIsOpen(false);
   };
 
-  React.useEffect(() => {
-    console.log(body);
-  }, [body]);
   return (
     <>
       <Main>

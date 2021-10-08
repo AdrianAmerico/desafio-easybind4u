@@ -33,17 +33,13 @@ const LoginPage: React.FC = () => {
     if (body.id.length > 3 && body.password.length > 3) {
       const { id, password } = body;
       const result = await requests.loginUser({ id, password });
-      // console.log("enviou");
-      console.log(result);
 
       if (result && result.token) {
         localStorage.setItem("token", result.token);
-        console.log("deu bom");
         history.push("/profile");
       }
-      // clear();
+      clear();
     }
-    console.log("nao enviou");
   };
   useEffect(() => {}, [body]);
 
