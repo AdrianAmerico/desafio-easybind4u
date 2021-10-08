@@ -3,7 +3,7 @@ import StyledButton from "../../../components/Button";
 import { TextContainer } from "../../../components/TextContainer";
 import { useStyles } from "./styles";
 
-const MyProfile = () => {
+const MyProfile = ({ mockData }: any) => {
   const classes = useStyles();
   return (
     <section className={classes.root}>
@@ -14,7 +14,7 @@ const MyProfile = () => {
             <p>Nome completo</p>
             <div>
               <section>
-                <span>Nome e Sobrenome</span>
+                <span>{mockData?.fullName}</span>
                 <span>Alterar</span>
               </section>
             </div>
@@ -24,7 +24,7 @@ const MyProfile = () => {
             <p>Email</p>
             <div>
               <section>
-                <span>usuario@meuprovedor.com</span>
+                <span>{mockData?.email}</span>
                 <span>Alterar</span>
               </section>
             </div>
@@ -34,7 +34,7 @@ const MyProfile = () => {
             <p>Data de nascimento</p>
             <div className={classes.disable}>
               <section>
-                <span>00/00/1990</span>
+                <span>{mockData?.birthday}</span>
               </section>
             </div>
           </TextContainer>

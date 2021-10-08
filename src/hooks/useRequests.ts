@@ -25,16 +25,14 @@ const useRequests = (setLoading: Dispatch<SetStateAction<Boolean>>) => {
     return result;
   };
 
-  const loginUser = async (
-    body: Login
-  ): Promise<AxiosResponse<LoginSuccess> | Response> => {
+  const loginUser = async (body: Login) => {
     setLoading(true);
     const result = await axios
       .post(`${BASE_URL}/o/customer-login/login`, body)
-      .then((res: AxiosResponse<LoginSuccess>) => {
-        return res;
+      .then((res) => {
+        return res.data as LoginSuccess;
       })
-      .catch((err: Response) => {
+      .catch((err) => {
         return err;
       });
     setLoading(false);
