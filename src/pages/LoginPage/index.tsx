@@ -30,10 +30,10 @@ const LoginPage: React.FC = () => {
     setIsVisible(false);
   };
 
-  const submitForm = () => {
+  const submitForm = async () => {
     if (body.id.length > 3 && body.password.length > 3) {
       const { id, password } = body;
-      requests.loginUser({ id, password });
+      await requests.loginUser({ id, password });
       console.log("enviou");
       clear();
     }

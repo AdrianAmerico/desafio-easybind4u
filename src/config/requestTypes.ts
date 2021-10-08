@@ -1,7 +1,7 @@
 // Cadastro de usuarios
 
 export interface User {
-  fullname: string;
+  fullName: string;
   email: string;
   nickname: string;
   birthday: Date;

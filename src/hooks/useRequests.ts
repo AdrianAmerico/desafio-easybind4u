@@ -11,17 +11,15 @@ import {
 const useRequests = (setLoading: Dispatch<SetStateAction<Boolean>>) => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-  const registerUser = async (
-    body: RegisterUser
-  ): Promise<AxiosResponse<Response> | RegisterUserErrorResponse> => {
+  const registerUser = async (body: RegisterUser): Promise<boolean> => {
     setLoading(true);
     const result = await axios
       .post(`${BASE_URL}/o/customer`, body)
       .then((res: AxiosResponse<Response>) => {
-        return res;
+        return true;
       })
       .catch((err: RegisterUserErrorResponse) => {
-        return err;
+        return false;
       });
     setLoading(false);
     return result;
