@@ -6,6 +6,7 @@ const GlobalState: React.FC = ({ children }) => {
   const [loading, setLoading] = useState<Boolean>(false);
 
   const requests = useRequests(setLoading);
+
   return (
     <GlobalContext.Provider value={{ requests, loading }}>
       {children}

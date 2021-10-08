@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { useStyles } from "./styles";
 import PersonOutlineRoundedIcon from "@material-ui/icons/PersonOutlineRounded";
@@ -11,10 +11,16 @@ import StyledButton from "../../components/Button";
 import GoogleIcon from "../../assets/GoogleIcon";
 import FacebookIcon from "../../assets/FacebookIcon";
 import Footer from "../../components/Footer";
+import useForm from "../../hooks/useForm";
+import GlobalContext from "../../global/globalContext";
+import useRequests from "../../hooks/useRequests";
 
 const LoginPage: React.FC = () => {
   const classes = useStyles();
   const [isVisible, setIsVisible] = useState(false);
+  const [loading, setLoading] = useState<Boolean>(false);
+  const { body, onChange, clear } = useForm({ id: "", password: "" });
+  const requests = useRequests(setLoading);
 
   const showPassword = (): void => {
     setIsVisible(true);
@@ -23,6 +29,17 @@ const LoginPage: React.FC = () => {
   const hiddenPassword = (): void => {
     setIsVisible(false);
   };
+
+  const submitForm = () => {
+    if (body.id.length > 3 && body.password.length > 3) {
+      const { id, password } = body;
+      requests.loginUser({ id, password });
+      console.log("enviou");
+      clear();
+    }
+    console.log("nao enviou");
+  };
+  useEffect(() => {}, [body]);
 
   return (
     <>
@@ -43,10 +60,19 @@ const LoginPage: React.FC = () => {
             <div></div>
           </section>
 
-          <form className={classes.formContainer}>
+          <form
+            className={classes.formContainer}
+            onChange={(event: React.FormEvent<HTMLFormElement>) =>
+              event.preventDefault()
+            }
+          >
             <div className={classes.fieldContainer}>
               <TextInput
                 placeholder="Usuário"
+                onChange={onChange}
+                name="id"
+                value={body.id}
+                required="required"
                 inputProps={{
                   startAdornment: (
                     <InputAdornment position="end">
@@ -57,13 +83,16 @@ const LoginPage: React.FC = () => {
               />
               <TextInput
                 placeholder="Senha"
+                onChange={onChange}
+                name="password"
+                value={body.password}
+                required="required"
                 inputProps={{
                   startAdornment: (
                     <InputAdornment position="end">
                       <VpnKeyRoundedIcon className={classes.svg} />
                     </InputAdornment>
                   ),
-
                   endAdornment: (
                     <InputAdornment position="start">
                       {isVisible ? (
@@ -83,7 +112,7 @@ const LoginPage: React.FC = () => {
               </p>
             </div>
 
-            <StyledButton>Entrar</StyledButton>
+            <StyledButton onClick={submitForm}>Entrar</StyledButton>
           </form>
 
           <div className={classes.textInfo}>
